@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Align containers vertically */
+        }
+        .container1 {
+            text-align: center;
+            position: relative; /* Added this to ensure containers have positioning context */
+            margin-bottom: 0px; /* Space between the containers */
+        }
+        .container2 {
+            position: relative; /* Added this to ensure containers have positioning context */
+            right: 40px; /* Customize position of container2 relative to container1 */
+        }
+        .cute-cat {
+            max-width: 100%;
+            height: auto;
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn_yes:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+        .btn_no {
+            background-color: #DC3545;
+            position: absolute;
+            transition: left 0.3s, top 0.3s; /* Added transition for smooth sliding */
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <img src="cute_cat.jpg" alt="Cute Cat" class="cute-cat">
+        <p class="message">Hi Kae, I love you lots, will you be my girlfriend? :3</p>
+    </div>
+
+    <div class="container2">
+        <a href="yaay.html" class="btn btn_yes">Yes <3</a>
+        <button class="btn btn_no">No</button>
+    </div>
+
+    <script>
+        const noButton = document.querySelector('.btn_no');
+        const yesButton = document.querySelector('.btn_yes');
+    
+        let growthFactor = 1; // Initial growth factor
+    
+        noButton.addEventListener('mouseenter', () => {
+            const container = document.querySelector('.container1');
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = noButton.getBoundingClientRect();
+    
+            const offsetX = Math.random() * (containerRect.width - buttonRect.width);
+            const offsetY = Math.random() * (containerRect.height - buttonRect.height);
+    
+            noButton.style.left = `${offsetX}px`;
+            noButton.style.top = `${offsetY}px`;
+    
+            yesButton.style.transform = `scale(${1 + growthFactor * 0.1})`; // Increase scale
+            growthFactor++; // Increase growth factor for next time
+        });
+    
+        noButton.addEventListener('mouseleave', () => {
+            // Remove the growth factor reset to ensure continuous growth
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

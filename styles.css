@@ -1,0 +1,69 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #edc6fd;
+}
+
+.container {
+    text-align: center;
+}
+
+.message {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn_no {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn_yes {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Add this line to remove the underline */
+}
+
+
+.btn_yes:hover {
+    background-color: #45a049;
+}
+
+.btn_no:hover {
+    background-color: #8a2f2c;
+}
+
+.cute-cat {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+.btn_yes:hover {
+    background-color: #45a049;
+}
+
+.grow {
+    transform: scale(1.1); /* Increase size */
+}
+
